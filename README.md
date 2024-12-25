@@ -1,2 +1,2 @@
-# EigenSR
+# EigenSR AAAI 2025 conference paper
 Coming soon...

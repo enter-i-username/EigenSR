@@ -95,7 +95,14 @@ The RGB dataset [NWPU RESISC45](https://tensorflow.google.cn/datasets/catalog/re
 
 ## Training
 
-By simply running the script `train_hsi.py`, you can train the model:
+By simply running the script `train_hsi.py` using:
+```bash
+python train_hsi.py
+```
+you can train the model with HSIs. The default configuration is in `train_config.py`,
+and it is used to train on the ARAD1K training set at a scale of $\times 2$.
+You can modify the configuration file to train the model with your own datasets.
+If you want to train on RGB images, please use `train_rgb.py`.
 
 ## Testing
 

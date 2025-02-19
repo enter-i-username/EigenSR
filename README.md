@@ -16,9 +16,9 @@ Paper link: [[arXiv]](https://arxiv.org/abs/2409.04050v2)
 
 </details>
 
-![fig1](figs/fig1.png)
+<img src="figs/fig1.png" alt="fig1" width="500">
 
-![fig2](figs/fig2.png)
+<img src="figs/fig2.png" alt="fig2" width="500">
 
 ## Preparation
 

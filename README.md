@@ -28,4 +28,93 @@ Paper link: [[arXiv]](https://arxiv.org/abs/2409.04050v2)
 
 ## Preparation
 
+### Environment and Dependencies
+This project is developed and tested using Python 3.9. We recommend using Anaconda for environment installation:
+```bash
+# Create a conda environment
+conda create -y -n EigenSR python=3.9
+
+# Activate the environment
+conda activate EigenSR
+
+# Install requirements
+pip install -r requirements.txt
+```
+
+### Pre-trained Models
+We use the pre-trained RGB models from [IPT](https://github.com/huawei-noah/Pretrained-IPT) (Image Processing Transformer) for our hyperspectral image super-resolution. You can download the pre-trained models from their [Google Drive](https://drive.google.com/drive/folders/1MVSdUX0YBExauG0fFz4ANiWTrq9xZEj7).
+
+Put the downloaded models (sr2 for example) into the `./pretrained/` directory, and it should look like this:
+```bash
+./pretrained/
+├── IPT_sr2.pt
+├── ...
+```
+
+### Datasets
+Download the HSI datasets from the following links:
+
+- [ARAD1K](https://github.com/JiangHe96/DL4sSR)
+- [CAVE](https://cave.cs.columbia.edu/repository/Multispectral)
+- [Harvard](https://vision.seas.harvard.edu/hyperspec/d2x5g3/)
+- [Pavia Centre](https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes)
+- [Washington DC Mall](https://rslab.ut.ac.ir/data)
+- [Chikusei](https://naotoyokoya.com/Download.html)
+
+and put them into `./your_own_datasets/`. Split them into `train` and `test`, and organize them as follows (taking ARAD1K as an example):
+```bash
+./your_own_datasets/
+├── ARAD1K
+│   ├── test
+│   │   ├── hsi
+│   │   │   ├── ARAD_1K_0901.mat
+│   │   │   ├── ARAD_1K_0902.mat
+│   │   │   ├── ...
+│   ├── train
+│   │   ├── hsi
+│   │   │   ├── ARAD_1K_0001.mat
+│   │   │   ├── ARAD_1K_0002.mat
+│   │   │   ├── ...
+```
+
+The RGB dataset [NWPU RESISC45](https://tensorflow.google.cn/datasets/catalog/resisc45) should be organized as follows:
+```bash
+./your_own_datasets/
+├── NWPU-RESISC45
+│   ├── test
+│   │   ├── rgb
+│   │   │   ├── airplane_001.jpg
+│   │   │   ├── airplane_002.jpg
+│   │   │   ├──...
+│   ├── train
+│   │   ├── rgb
+│   │   │   ├── airplane_003.jpg
+│   │   │   ├── airplane_004.jpg
+│   │   │   ├──...
+```
+
+## Training
+
+By simply running the script `train_hsi.py`, you can train the model:
+
+## Testing
+
+
+
+## Citation
+If you find our work helpful in your research, please consider citing:
+```bibtex
+@article{su2024eigensr,
+  title={EigenSR: Eigenimage-Bridged Pre-Trained RGB Learners for Single Hyperspectral Image Super-Resolution},
+  author={Su, Xi and Shen, Xiangfei and Wan, Mingyang and Nie, Jing and Chen, Lihui and Liu, Haijun and Zhou, Xichuan},
+  journal={arXiv preprint arXiv:2409.04050},
+  year={2024}
+}
+```
+
+## Acknowledgements
+The Transformer body part is mainly from [IPT](https://github.com/huawei-noah/Pretrained-IPT), and the PyTorch implementation of MATLAB imresize function is from [bicubic_pytorch](https://github.com/sanghyun-son/bicubic_pytorch).
+
+Thanks for their excellent works!
+
 

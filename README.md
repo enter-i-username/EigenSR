@@ -106,7 +106,43 @@ If you want to train on RGB images, please use `train_rgb.py`.
 
 ## Testing
 
+The inference script `test.py` is a powerful tool to test the model on the datasets you define.
+It was implemented using the Iterative Spectral Regularization (ISR) algorithm mentioned in our paper.
+It needs to be configured with the following main parameters:
+- `scale`: The scale factor of the super-resolution.
+- `pretrained_model_fn`: The path to the pre-trained ViT body.
+- `finetuned_trainable_fn`: The path to the fine-tuned trainable part (LoRA + Head + Tail) from the previous training step.
+- `iters`: The iteration number of ISR.
+- `beta`: The combination weight constant.
+- `eigen_dims`: The channel number of the eigenimages.
+- `src_lr_hsi_folder`: The path to the low-resolution source images to be processed.
+- `ref_hr_hsi_folder`: The path to the high-resolution reference images (can be left empty).
+- `dst_sr_folder`: The path to save the generated SR images (can be left empty).
 
+For example, organize the test data as follows:
+```bash
+./your_src_folder/
+├── img1.mat
+├── img2.mat
+├── ...
+```
+where the HSI (H, W, C) is stored in the variable `data` in the `.mat` files. You can get the following generated results in the dst folder:
+```bash
+./your_dst_folder/
+├── img1.mat
+├── img2.mat
+├── ...
+```
+By adding the additional ref folder as:
+```bash
+./your_ref_folder/
+├── img1.mat
+├── img2.mat
+├── ...
+```
+the metrics will be calculated and printed in the console.
+
+Just have fun! =)
 
 ## Citation
 If you find our work helpful in your research, please consider citing:

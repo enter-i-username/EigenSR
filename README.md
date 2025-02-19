@@ -126,7 +126,7 @@ For example, organize the test data as follows:
 ├── img2.mat
 ├── ...
 ```
-where the HSI (H, W, C) is stored in the variable `data` in the `.mat` files. You can get the following generated results in the dst folder:
+where the HSI (H, W, C) should be stored in the variable `data` in the `.mat` files. You can get the following generated results in the dst folder:
 ```bash
 ./your_dst_folder/
 ├── img1.mat

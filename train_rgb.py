@@ -135,7 +135,7 @@ if __name__ == '__main__':
         return fn
 
 
-    print(f'\n\nExperment started at {config.exp_folder}\n\n')
+    print(f'\n\nExperiment started at {config.exp_folder}\n\n')
     for epoch in tqdm(range(1, 1 + config.num_epochs)):
 
         trainer.train_one_epoch(

@@ -17,8 +17,10 @@ Paper link: [[arXiv]](https://arxiv.org/abs/2409.04050v2)
 </details>
 
 <img src="figs/fig1.png" alt="fig1" width="500">
+*Figure 1: The motivation. The lack of HSI training data is the main bottleneck for single-HSI-SR. The channel differences between RGB and HSI make it challenging to directly transfer RGB models to HSI. Inspired by spectral-spatial decoupling, we leverage spatial part of HSI, namely eigenimages, to bridge the gap between pre-trained RGB models and HSI, and constrain the spectral part to keep spectral fidelity.*
 
 <img src="figs/fig2.png" alt="fig2" width="500">
+*Figure 2: The flowchart of EigenSR. It consists of two stages. Stage 1 uses the pre-trained Transformer Body to fine-tune a single-channel model in the eigenimage domain. Stage 2 utilizes the fine-tuned model for inference with iterative spectral regularization on unseen LR HSI.*
 
 ## Preparation
 
